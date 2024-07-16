@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 5</title>
+</head>
+<style>
+    body {
+        color: white;
+        background-color: #212121;
+    }
+</style>
+
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(Language_Name) {
+        const li = document.createElement('li');
+        li.innerHTML = `${Language_Name}`;
+        document.querySelector('.language').appendChild(li);
+    }
+    addLanguage('Python');
+    addLanguage('Java');
+
+    function addOptimizedWayLanguage(Language_Name) {
+        const li = document.createElement('li');
+        li.innerHTML = `${Language_Name}`;
+        document.querySelector('.language').insertAdjacentElement('beforeend', li);
+    }
+    addOptimizedWayLanguage('C++');
+    addOptimizedWayLanguage('C#');
+
+    function addOptimizedWayLanguage2(Language_Name) {
+        const li = document.createElement('li');
+        li.innerHTML = `${Language_Name}`;
+        document.querySelector('.language').insertAdjacentElement('afterbegin', li);
+    }
+    addOptimizedWayLanguage2('Ruby');
+    addOptimizedWayLanguage2('PHP');
+
+
+    function addOptimizedWayLanguage3(Language_Name) {
+        const li = document.createElement('li');
+        li.innerHTML = `${Language_Name}`;
+        document.querySelector('.language').insertAdjacentElement('beforebegin', li);
+
+    }
+    addOptimizedWayLanguage3('Swift');
+    addOptimizedWayLanguage3('Kotlin');
+
+    function addOptimizedWayLanguage4(Language_Name) {
+        const li = document.createElement('li');
+        li.innerHTML = `${Language_Name}`;
+        li.classList.add('language');
+        document.querySelector('.language').insertAdjacentElement('afterend', li);
+
+    }
+    addOptimizedWayLanguage4('Rust');
+    addOptimizedWayLanguage4('Go');
+
+    function addOptimizedWayLanguage5(Language_Name) {
+        const li = document.createElement('li');
+        const addText = document.createTextNode(Language_Name);
+        //li.appendChild(document.createTextNode(Language_Name));
+        li.appendChild(addText);
+        //document.querySelector('.language').appendChild(li);
+        const ul = document.querySelector('.language');
+        //ul.appendChild(li);
+        ul.appendChild(li);
+    }
+    addOptimizedWayLanguage5('R');
+    addOptimizedWayLanguage5('D');
+    addOptimizedWayLanguage5('O');
+
+    /*
+    function createAndAppendList() {
+        // Create a <div> container (you can customize the ID)
+        const myContainer = document.createElement('div');
+        myContainer.id = 'myContainer';
+
+        // Create the <ul> element
+        const ul = document.createElement('ul');
+
+        // Add some example list items (you can replace these)
+        const item1 = document.createElement('li');
+        item1.textContent = 'Item 1';
+        ul.appendChild(item1);
+
+        const item2 = document.createElement('li');
+        item2.textContent = 'Item 2';
+        ul.appendChild(item2);
+
+        // Append the <ul> to the container
+        myContainer.appendChild(ul);
+
+        // Finally, append the container to the document
+        document.body.appendChild(myContainer);
+    }
+
+    // Call the function to create and append the list
+    createAndAppendList();
+    */
+
+    //Edit the above code to create a list of languages
+    /*
+    const secondLanguage = document.querySelector("li:nth-child(1)");
+    secondLanguage.textContent = "cmake";
+    
+    const secondLanguage2 = document.querySelector("li:nth-child(2)");
+    secondLanguage2.textContent = "sasas";
+
+
+    const firstLanguage = document.querySelector('.language li:first-child');
+    firstLanguage.textContent = 'TypeScript';
+
+    const thirdLanguage = document.querySelector('.language li:nth-child(3)');
+    thirdLanguage.textContent = 'Dart';
+
+    const lastLanguage = document.querySelector('.language li:last-child');
+    lastLanguage.textContent = 'Objective-C';
+
+    */
+
+
+    const fifthLanguage = document.querySelector('.language li:nth-child(1)');
+    //fifthLanguage.innerHTML = 'mojo';
+    //fifthLanguage.outerHTML = '<li>Perl</li>';
+
+    const newLi = document.createElement('li');
+    newLi.textContent = 'Perl';
+
+    fifthLanguage.replaceWith(newLi);
+
+    const ninthLanguage = document.querySelector('.language li:nth-child(9)');
+    ninthLanguage.remove();
+
+    
+    
+    const seventhLanguage = document.querySelector('.language li:nth-child(7)');
+    const copyOfSeventhLanguage = seventhLanguage.cloneNode(true);
+    document.querySelector('.language').appendChild(copyOfSeventhLanguage);
+
+    
+    
+    const sixthLanguage = document.querySelector('.language li:nth-child(6)');
+
+    const newSixthLanguage = document.createElement('li');
+
+    newSixthLanguage.textContent = 'Rust';
+    sixthLanguage.replaceWith(newSixthLanguage);
+
+
+    const allLanguages = document.querySelectorAll('.language li');
+    allLanguages.forEach((language, index) => {
+        language.textContent = `${index + 1}. ${language.textContent}`;
+    });
+
+
+
+</script>
+
+</html>

@@ -1,7 +1,9 @@
+// 05_Stack_&_Heap.js
+
 let myyoutubename = "abhishek"
 anothername = myyoutubename
 
-anothername = "Saini"
+anothername = "Saini" 
 
 console.log(myyoutubename);
 console.log(anothername);
